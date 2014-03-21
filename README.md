@@ -6,7 +6,7 @@ Put the fishpy.fish in $HOME/.config/fish/functions/ folder and restart the fish
 
 Usage guide
 ===
-cd directory_desired
+cd directory_desired;
 fishpy proj_name
 
 The fishpy function will do:
