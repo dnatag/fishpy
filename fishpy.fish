@@ -18,11 +18,25 @@ function fishpy --description='initialize a python project with virtualenv git a
     cd $argv[1]
     mkvirtualenv $argv[1]
     pip install pip-accel
+
     echo '__pycache__
 *.py[cod]
 *.so
-*.sublime-project' > .gitignore
+*.sublime-project
+*.sublime-workspace' > .gitignore
     git init .
     git add *
     git commit -m 'Initial commit of skeleton python'
+
+    cd $argv[1]
+    echo '{
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ]
+}' > $argv[1].sublime-project
+
 end
